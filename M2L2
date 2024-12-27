@@ -1,0 +1,37 @@
+import discord
+import os 
+import random
+import requests
+# Discord botları için komut tabanlı bir framework sağlar. 
+# Bu framework sayesinde, botumuzun belirli komutlara yanıt vermesini kolayca tanımlayabiliriz.
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True # botun mesaj içeriğine erişimini aktif hale getiriyoruz.
+
+bot = commands.Bot(command_prefix='$', intents=intents)
+#Bu özellik, botun kendisine gönderilen komutları tanıması için bir ön ek tanımlar.
+#  $ işareti komut ön eki olarak belirlenmiştir. Yani bot sadece $ ile başlayan komutlara yanıt verir.
+
+
+@bot.event # bot belirli bir olay gerçekleştiğinde tetiklensin.
+async def on_ready(): # bot başarılı bir şekilde Discord'a bağlandığında tetiklenir
+    print(f'{bot.user} olarak giriş yaptık')
+
+yok_olma=[
+    "Strafor 5000 yıl - 2 Milyon yıl.",
+"Cam Şişe 4000 yıl.",
+"Plastik 1000 yıl.",
+"Poliüretan (Sentetik fiberler, yapıştırıcılar, halıların alt kısmı ve sert plastik contalar) 1000 yıl.",
+"Telefon Kartı 1000 yıl.",
+"Kaset 100 yıl - 1000 yıl.",
+"Su Boruları 1000 yıl.",
+"Balık Oltası 600 yıl."
+]
+
+@bot.command()
+async def bilgi(ctx):
+    await ctx.send(random.choice(yok_olma))
+
+
+bot.run("token")
