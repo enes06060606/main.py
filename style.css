@@ -1,0 +1,56 @@
+body {
+    font-family: Inter, sans-serif; /* Yazı tipi ailesi */
+    font-size: 18px; /* <p></p> etiketindeki ana yazının boyutu */
+    background-color: #4e2715; /* Web sayfasının arka plan rengi */
+    color: #c4c4c498; /* Metin rengi */
+}
+
+h1 {
+    color: #fc3b00; /* Başlık rengi */
+    font-size: 30px; /* Başlık yazı tipi boyutu */
+    font-family: Inter, serif; /* Başlıkta kullanılan yazı tipi ailesi */
+}
+h2 {
+    color:#fd0000;
+    font-size:30px; /* Başlık yazı tipi boyutu */
+    font-family: Inter, serif; /* Başlıkta kullanılan yazı tipi ailesi */
+}
+h3 {
+    color:#ff0000;
+    font-size:30px; /* Başlık yazı tipi boyutu */
+    font-family: Inter, serif; /* Başlıkta kullanılan yazı tipi ailesi */
+}
+@keyframes color-change {
+    0% {
+      color: blue;
+    }
+    25% {
+        color:blueviolet;
+    }
+    50% {
+      color: red;
+    }
+    75% {
+        color :rgb(255, 153, 0);
+    }
+    100% {
+      color: blue;
+    }
+}
+
+h1 {
+    animation: color-change 3s infinite;  /*renk degısımı*/
+}
+h2 {
+    animation: color-change 3s infinite;
+}
+h3 {
+    animation: color-change 3s infinite;
+}
+li:hover { animation: color-change 3s infinite; }
+/*1. background-color: —  arka plan rengini değiştirmek için kullanılır.
+2. color: — metnin rengini belirlemek için kullanılır.
+3. text-decoration-color: —  Metin rengini color etiketiyle belirlediğinizde, süslemenin rengi de değişir. Bu etiketi kullanarak süslemenin rengini değiştirebilirsiniz. Örneğin, farklı renkte alt çizgiler istediğinizde bu kullanışlı olabilir.
+4*. border: — bloğun kenarlarını belirlemek için kullanılır.
+5. font-family: — metin için yazı tipini belirlemek için kullanılır.
+6. font-size:  — yazı tipinin boyutunu belirlemek için kullanılır./*
